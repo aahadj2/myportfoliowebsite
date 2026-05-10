@@ -1,0 +1,240 @@
+.projects {
+  padding: 120px 0;
+  position: relative;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.eyebrow {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #06b6d4;
+  margin-bottom: 16px;
+}
+
+.title {
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  letter-spacing: -1px;
+  color: #f8fafc;
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+
+.highlight {
+  background: linear-gradient(135deg, #7c3aed, #06b6d4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 16px;
+  color: #64748b;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.filters {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 48px;
+}
+
+.filterBtn {
+  padding: 8px 20px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #64748b;
+  transition: all 0.25s;
+}
+
+.filterBtn:hover {
+  border-color: rgba(124,58,237,0.3);
+  color: #c4b5fd;
+  background: rgba(124,58,237,0.06);
+}
+
+.filterActive {
+  background: rgba(124,58,237,0.15) !important;
+  border-color: rgba(124,58,237,0.4) !important;
+  color: #c4b5fd !important;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.card {
+  position: relative;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 16px;
+  padding: 24px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  transition: border-color 0.3s, transform 0.3s;
+}
+
+.card:hover {
+  border-color: rgba(124,58,237,0.25);
+  transform: translateY(-4px);
+}
+
+.featured {
+  border-color: rgba(124,58,237,0.15);
+}
+
+.cardGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(124,58,237,0.08), transparent 60%);
+  pointer-events: none;
+  transition: opacity 0.4s;
+}
+
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.projectIcon {
+  font-size: 32px;
+  line-height: 1;
+}
+
+.featuredBadge {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f59e0b;
+  background: rgba(245,158,11,0.1);
+  border: 1px solid rgba(245,158,11,0.2);
+  padding: 3px 10px;
+  border-radius: 100px;
+}
+
+.cardBody {
+  flex: 1;
+}
+
+.cardTitle {
+  font-size: 17px;
+  font-weight: 600;
+  color: #f8fafc;
+  margin-bottom: 8px;
+}
+
+.cardDesc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.65;
+  margin-bottom: 16px;
+}
+
+.techStack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.techTag {
+  font-size: 11px;
+  font-weight: 500;
+  font-family: 'JetBrains Mono', monospace;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.06);
+  padding: 3px 8px;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.techTag:hover {
+  background: rgba(255,255,255,0.08);
+}
+
+.cardFooter {
+  display: flex;
+  gap: 8px;
+  border-top: 1px solid rgba(255,255,255,0.04);
+  padding-top: 16px;
+}
+
+.cardLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: all 0.25s;
+}
+
+.cardLink:hover {
+  background: rgba(255,255,255,0.08);
+  color: #f8fafc;
+  border-color: rgba(255,255,255,0.12);
+}
+
+.demoLink:hover {
+  background: rgba(124,58,237,0.15);
+  border-color: rgba(124,58,237,0.3);
+  color: #c4b5fd;
+}
+
+.githubCta {
+  display: flex;
+  justify-content: center;
+  margin-top: 48px;
+}
+
+.githubCtaBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #94a3b8;
+  transition: all 0.3s;
+}
+
+.githubCtaBtn:hover {
+  background: rgba(124,58,237,0.1);
+  border-color: rgba(124,58,237,0.3);
+  color: #c4b5fd;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 640px) {
+  .projects { padding: 80px 0; }
+  .grid { grid-template-columns: 1fr; }
+}
