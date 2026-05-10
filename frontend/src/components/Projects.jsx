@@ -13,6 +13,9 @@ const techColors = {
   'Android Studio': '#3ddc84', 'HTML': '#e34f26', 'CSS': '#1572b6',
   'JavaScript': '#f7df1e', 'Botpress': '#6366f1', 'REST APIs': '#06b6d4',
   'C++': '#00599c', 'Git/GitHub': '#f1502f',
+  'Socket.IO': '#010101', 'MongoDB': '#47a248', 'Express.js': '#68a063',
+  'LangGraph': '#ff6b35', 'LangChain': '#1c3a5e', 'MLOps': '#7c3aed',
+  'Multi-Agent AI': '#ec4899', 'Human-in-the-Loop': '#f59e0b', 'Mosaic AI': '#ff3621',
 }
 
 const projectIcons = {
@@ -20,13 +23,17 @@ const projectIcons = {
   'mlops': '🧠',
   'quantum': '⚛️',
   'chatbot': '💬',
+  'ludo': '🎲',
+  'langgraph': '🤖',
 }
 
 const fallbackProjects = [
   { id: 1, title: 'Campus Sustainability App', description: 'Full-stack web app to track sustainable practices at LUMS. Led system design, database schema, and backend API in an agile team — LUMS Software Engineering course.', tech: ['React', 'Node.js', 'PostgreSQL', 'Figma', 'Android Studio'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'sustainability', category: 'Full Stack', featured: true },
-  { id: 2, title: 'Database & MLOps Pipeline', description: 'Relational schemas and complex SQL on Azure. End-to-end MLOps workflows in Databricks — training, versioning, deployment. Also built the backend of a food delivery app.', tech: ['Python', 'SQL', 'Azure', 'Databricks', 'MLOps'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'mlops', category: 'AI/ML', featured: true },
-  { id: 3, title: 'Quantum Computing Lab', description: 'Quantum circuits and algorithms with IBM Qiskit as part of the Quantum Technologies minor. Simulating gates, superposition, and entanglement — working toward IBM Qiskit Developer Certification.', tech: ['Python', 'IBM Qiskit', 'MATLAB', 'Quantum Circuits'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'quantum', category: 'Research', featured: true },
-  { id: 4, title: 'Chatbot-Integrated Web App', description: 'Responsive web apps built with FreeCodeCamp curriculum. Integrated a Botpress chatbot and connected external REST APIs for dynamic content during the Stratosphere Studio internship.', tech: ['HTML', 'CSS', 'JavaScript', 'Botpress', 'REST APIs'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'chatbot', category: 'Frontend', featured: false },
+  { id: 2, title: 'Multiplayer Ludo — Real-Time MERN', description: 'Full-stack Ludo game with real-time multiplayer via WebSockets. Room-based architecture keeps game state server-side so all players stay in sync — zero lag, no cheating. Built with Socket.IO on a MERN stack.', tech: ['React', 'Node.js', 'MongoDB', 'Socket.IO', 'Express.js'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'ludo', category: 'Full Stack', featured: true },
+  { id: 3, title: 'LangGraph Multi-Agent AI Pipeline', description: 'Six-agent system (Director → Architect → Engineer → Execution Manager → QA → Scorer) that autonomously writes, runs, and iterates Python game code. Features Human-in-the-Loop control, LangGraph state machines with reducers, and a QA subgraph routing between a syntax checker, logic tester, and performance auditor. Built on Databricks Mosaic AI — LUMS CS5305 MLOps course.', tech: ['LangGraph', 'LangChain', 'Python', 'Multi-Agent AI', 'Human-in-the-Loop', 'Mosaic AI', 'MLOps'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'langgraph', category: 'AI/ML', featured: true },
+  { id: 4, title: 'Database & MLOps Pipeline', description: 'Relational schemas and complex SQL on Azure. End-to-end MLOps workflows in Databricks — training, versioning, deployment. Also built the backend of a food delivery app.', tech: ['Python', 'SQL', 'Azure', 'Databricks', 'MLOps'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'mlops', category: 'AI/ML', featured: true },
+  { id: 5, title: 'Quantum Computing Lab', description: 'Quantum circuits and algorithms with IBM Qiskit as part of the Quantum Technologies minor. Simulating gates, superposition, and entanglement — working toward IBM Qiskit Developer Certification.', tech: ['Python', 'IBM Qiskit', 'MATLAB', 'Quantum Circuits'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'quantum', category: 'Research', featured: true },
+  { id: 6, title: 'Chatbot-Integrated Web App', description: 'Responsive web apps built with FreeCodeCamp curriculum. Integrated a Botpress chatbot and connected external REST APIs for dynamic content during the Stratosphere Studio internship.', tech: ['HTML', 'CSS', 'JavaScript', 'Botpress', 'REST APIs'], github: 'https://github.com/aahadj2', demo: 'https://github.com/aahadj2', image: 'chatbot', category: 'Frontend', featured: false },
 ]
 
 function ProjectCard({ project, index }) {
@@ -107,7 +114,7 @@ export default function Projects() {
   const inView = useInView(ref, { once: true, margin: '-100px' })
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/projects')
+    axios.get(`${import.meta.env.VITE_API_URL || 'http://localhost:3001'}/api/projects`)
       .then(res => setProjects(res.data.data))
       .catch(() => setProjects(fallbackProjects))
   }, [])

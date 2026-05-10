@@ -7,6 +7,7 @@ import Skills from './components/Skills'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import ParticleBackground from './components/ParticleBackground'
+import CustomCursor from './components/CustomCursor'
 import './App.css'
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 
   return (
     <div className="app">
+      <CustomCursor />
       <ParticleBackground />
       <Navbar />
       <main>
